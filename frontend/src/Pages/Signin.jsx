@@ -7,14 +7,13 @@ import SignInWithGoogle from "../components/SigninWithGoogle";
 import { useAuth } from "../context/AuthContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import firebase from "firebase/compat/app";
 
-const API_URL = "https://auth-app-main-4bam.onrender.com/auth";
-// const API_URL = "http://localhost:5000/auth";
+// const API_URL = "https://auth-app-main-4bam.onrender.com/auth";
+const API_URL = "http://localhost:5000/auth";
 
 function Signin() {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login } = useAuth(); 
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -27,11 +26,10 @@ function Signin() {
     try {
       const res = await axios.post(`${API_URL}/sign-in`, formData);
 
-      if (res.data.token && res.data.user) {
-        await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    
 
-        await signInWithEmailAndPassword(auth, formData.email, formData.password);
-      }
+        // await signInWithEmailAndPassword(auth, formData.email, formData.password);
+      
 
       login(res.data.token, res.data.user);
 
