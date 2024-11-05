@@ -3,8 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const API_URL = "http://localhost:5000";
-// const API_URL = "https://auth-app-main-4bam.onrender.com" ;
+// const API_URL = "http://localhost:5000"; 
+const API_URL = "https://auth-app-main-4bam.onrender.com" ;
 
 const Home = () => {
   const [users, setUsers] = useState([]);

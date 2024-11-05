@@ -13,8 +13,8 @@ import { getFirestore, collection, getDocs } from "firebase/firestore"; // Fireb
 import { FaPaperclip, FaTimesCircle } from "react-icons/fa"; // Add FontAwesome icons
 import { getAuth,onAuthStateChanged } from "firebase/auth";
 
-// const API_URL = "https://auth-app-main-4bam.onrender.com";
-const API_URL = "http://localhost:5000";
+const API_URL = "https://auth-app-main-4bam.onrender.com";
+// const API_URL = "http://localhost:5000";
 const socket = io(`${API_URL}`, {
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
